@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
-import Image from "next/image";
+import styled from "styled-components";
 
 import { restaurants } from "../../../data";
 import { RestaurantsWrapper } from "./Style";
+
+export const StyledLink = styled.a`
+  text-decoration: none;
+  color: var(--darkgray);
+`;
 
 type Props = {};
 
@@ -13,24 +18,26 @@ function Restaurants({}: Props) {
     <div>
       <RestaurantsWrapper>
         <ul className="restaurants">
-          {stores.map((item) => {
+          {restaurants.map((item) => {
             return (
               <>
                 <li className="restaurants__item">
-                  <div className="restaurant">
-                    <figure className="restaurant__image">
-                      <img src={item.image.img} alt={item.image.alt} />
-                    </figure>
-                    <div className="restaurant__content">
-                      <h3 className="restaurant__title">{item.name}</h3>
-                      <p className="restaurant__description">
-                        {item.description}
-                      </p>
-                      <span className="restaurant__reviews">
-                        ({item.reviews.length} reviews)
-                      </span>
+                  <StyledLink href={`/restaurants/${item.id}`}>
+                    <div className="restaurant">
+                      <figure className="restaurant__image">
+                        <img src={item.image.img} alt={item.image.alt} />
+                      </figure>
+                      <div className="restaurant__content">
+                        <h3 className="restaurant__title">{item.name}</h3>
+                        <p className="restaurant__description">
+                          {item.description}
+                        </p>
+                        <span className="restaurant__reviews">
+                          ({item.reviews.length} reviews)
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </StyledLink>
                 </li>
               </>
             );

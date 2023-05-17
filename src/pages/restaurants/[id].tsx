@@ -83,9 +83,23 @@ function RestaurantPage() {
             <div className="menu-inner">
               <RestaurantWrapper>
                 {restaurantState && (
-                  <h1 className="name">{restaurantState.name}</h1>
+                  <h1 className="restaurant-name">{restaurantState.name}</h1>
                 )}
               </RestaurantWrapper>
+              <div className="restaurant">
+                <ul className="restaurant__menu">
+                  {restaurantState.menu?.map((item) => {
+                    return (
+                      <li
+                        className="restaurant__menu-item"
+                        key={restaurantState.id}
+                      >
+                        <div className="menu-item"></div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           </MenuWrapper>
         </LayoutWrapper>
