@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Layout from "../../components/Layout/Layout";
 import MenuItem from "../../components/MenuItem/MenuItem";
+import Cart from "../../components/Cart/Cart";
 
 import { useRouter } from "next/router";
 
@@ -17,7 +18,7 @@ export const LayoutWrapper = styled.div`
 
 export const RestaurantWrapper = styled.div`
   &:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 `;
 
@@ -107,6 +108,7 @@ function RestaurantPage() {
               </div>
             </div>
           </MenuWrapper>
+          <Cart />
         </LayoutWrapper>
       </Layout>
     </>

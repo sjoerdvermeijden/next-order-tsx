@@ -7,7 +7,12 @@ type Props = {};
 function Cart({}: Props) {
   return (
     <>
-      <CartWrapper>Cart</CartWrapper>
+      <CartWrapper>
+        <div className="cart">
+          <h3 className="cart__title">Winkelmand</h3>
+          <span className="cart__total">Totaal: €0</span>
+        </div>
+      </CartWrapper>
     </>
   );
 }
