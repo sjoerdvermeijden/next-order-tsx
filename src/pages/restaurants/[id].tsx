@@ -98,6 +98,7 @@ function RestaurantPage() {
                         <MenuItem
                           title={item.title}
                           description={item.description}
+                          price={item.price}
                         />
                       </li>
                     );

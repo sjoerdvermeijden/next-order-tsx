@@ -17,6 +17,7 @@ export const MenuWrapper = styled.div`
       top: 0;
     }
 
+    &__description,
     &__title {
       &:not(:last-child) {
         margin-bottom: 8px;
