@@ -94,7 +94,9 @@ function RestaurantPage() {
                         className="restaurant__menu-item"
                         key={restaurantState.id}
                       >
-                        <div className="menu-item"></div>
+                        <div className="menu-item">
+                          <h3 className="menu-item__title">{item.title}</h3>
+                        </div>
                       </li>
                     );
                   })}
