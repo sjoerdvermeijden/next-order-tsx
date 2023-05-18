@@ -5,8 +5,17 @@ export const MenuWrapper = styled.div`
   position: relative;
 
   .menu-item {
+    display: flex;
+
+    &__image {
+      img {
+        height: 100px;
+        width: 150px;
+      }
+    }
+
     &__container {
-      padding: 5px;
+      padding: 10px;
     }
 
     &__add-button {
@@ -15,6 +24,11 @@ export const MenuWrapper = styled.div`
       position: absolute;
       right: 0;
       top: 0;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
     }
 
     &__description,

@@ -6,6 +6,10 @@ type Props = {
   title: string;
   description: string;
   price: number;
+  image: {
+    img: string;
+    alt: string;
+  };
 };
 
 const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
@@ -14,11 +18,13 @@ const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
   console.log("test");
 };
 
-function Menu({ title, description, price }: Props) {
+function Menu({ title, description, price, image }: Props) {
   return (
     <MenuWrapper>
       <div className="menu-item">
-        <figure className="menu-item__image"></figure>
+        <figure className="menu-item__image">
+          <img src={image.img} alt={image.alt} />
+        </figure>
         <div className="menu-item__container">
           <button
             className="menu-item__add-button"

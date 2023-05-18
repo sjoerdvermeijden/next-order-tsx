@@ -98,6 +98,7 @@ function RestaurantPage() {
                       >
                         <MenuItem
                           title={item.title}
+                          image={item.image}
                           description={item.description}
                           price={item.price}
                         />
