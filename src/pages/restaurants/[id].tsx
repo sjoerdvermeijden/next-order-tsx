@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Layout from "../../components/Layout/Layout";
+import MenuItem from "../../components/MenuItem/MenuItem";
 
 import { useRouter } from "next/router";
 
@@ -94,9 +95,10 @@ function RestaurantPage() {
                         className="restaurant__menu-item"
                         key={restaurantState.id}
                       >
-                        <div className="menu-item">
-                          <h3 className="menu-item__title">{item.title}</h3>
-                        </div>
+                        <MenuItem
+                          title={item.title}
+                          description={item.description}
+                        />
                       </li>
                     );
                   })}
