@@ -6,8 +6,8 @@ export const RestaurantsWrapper = styled.div`
 
   .restaurants {
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
+    flex-grow: 1;
     list-style: none;
 
     &__item {

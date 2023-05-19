@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 
 import { FilterContext } from "../../context/FilterContext";
 import { FilterWrapper } from "./Style";
@@ -8,6 +8,13 @@ import { BsChevronUp } from "react-icons/bs";
 type Props = {};
 
 function HomeFilter({}: Props) {
+  const openToggle = (e: MouseEvent<HTMLElement>) => {
+    const title = e.target as Element;
+    const list = title.parentNode as Element;
+
+    list.classList.toggle("is-open");
+  };
+
   return (
     <FilterWrapper>
       <div className="star-rating">
