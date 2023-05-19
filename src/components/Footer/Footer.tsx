@@ -1,6 +1,13 @@
 import { FooterWrapper } from "./Style";
 
+import styled from "styled-components";
+
 import Wrap from "../Wrap/Wrap";
+
+export const StyledLink = styled.a`
+  color: white;
+  font-weight: bold;
+`;
 
 type Props = {};
 
@@ -8,7 +15,15 @@ function Footer({}: Props) {
   return (
     <div>
       <FooterWrapper>
-        <Wrap>Github repo: hier | Sjoerd Vermeijden</Wrap>
+        <Wrap>
+          <p>
+            Github repo:{" "}
+            <StyledLink href="" target="_blank" rel="noreferrer">
+              hier
+            </StyledLink>{" "}
+            | Sjoerd Vermeijden
+          </p>
+        </Wrap>
       </FooterWrapper>
     </div>
   );
