@@ -13,7 +13,7 @@ function Cart({}: Props) {
   const addFunction = (e: MouseEvent<HTMLButtonElement>, id: number) => {
     const newArray = cartItems.map((item) => {
       if (item.id === id) {
-        console.log("test");
+        item.count++;
       }
       return item;
     });
