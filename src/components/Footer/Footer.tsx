@@ -8,7 +8,7 @@ function Footer({}: Props) {
   return (
     <div>
       <FooterWrapper>
-        <Wrap>Sjoerd Vermeijden</Wrap>
+        <Wrap>Github repo: hier | Sjoerd Vermeijden</Wrap>
       </FooterWrapper>
     </div>
   );

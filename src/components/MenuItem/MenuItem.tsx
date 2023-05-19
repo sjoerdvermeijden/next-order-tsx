@@ -1,4 +1,6 @@
-import React, { MouseEvent } from "react";
+import React, { MouseEvent, useContext } from "react";
+
+import { CartContext } from "../../context/CartContext";
 
 import { MenuWrapper } from "./Style";
 
@@ -13,13 +15,15 @@ type Props = {
   };
 };
 
-const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>, id: number) => {
-  e.preventDefault();
-
-  console.log(id);
-};
-
 function Menu({ id, title, description, price, image }: Props) {
+  const [cartItems, setCartItems] = useContext(CartContext);
+
+  const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>, id: number) => {
+    e.preventDefault();
+
+    setCartItems([...cartItems, { id: cartItems.length + 1, title: "Test" }]);
+  };
+
   return (
     <MenuWrapper>
       <div className="menu-item">

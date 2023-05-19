@@ -12,27 +12,15 @@ type Props = {
 
 interface CartItem {
   id: number;
-  name: string;
-  completed: boolean;
-  edit: boolean;
+  title: string;
 }
 
 type ContextValue = [CartItem[], Dispatch<SetStateAction<CartItem[]>>];
 
-const getItems = () => {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems") || "");
-
-  if (cartItems) {
-    return cartItems;
-  } else {
-    return [];
-  }
-};
-
 export const CartContext = createContext<ContextValue>([[], () => {}]);
 
 export function CartComponent({ children }: Props) {
-  const [cartItems, setCartItems] = useState<CartItem[]>(getItems());
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem("cartItems") || "");
