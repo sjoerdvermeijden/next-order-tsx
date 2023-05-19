@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { MouseEvent, useContext } from "react";
 
 import { CartWrapper } from "./Style";
 
@@ -8,6 +8,19 @@ type Props = {};
 
 function Cart({}: Props) {
   const [cartItems, setCartItems] = useContext(CartContext);
+
+  // The add button on individual cart items
+  const addFunction = (e: MouseEvent<HTMLButtonElement>, id: number) => {
+    const newArray = cartItems.map((item) => {
+      if (item.id === id) {
+        console.log("test");
+      }
+      return item;
+    });
+
+    setCartItems(newArray);
+  };
+
   return (
     <>
       <CartWrapper>
@@ -24,8 +37,18 @@ function Cart({}: Props) {
                       <span className="cart-item__price">€ 16.99</span>
                     </div>
                     <div className="cart-item__buttons">
-                      <button className="cart-item__subtract">-</button>
-                      <button className="cart-item__add">+</button>
+                      <button
+                        className="cart-item__subtract"
+                        onClick={(e) => subtractFunction(e)}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="cart-item__add"
+                        onClick={(e) => addFunction(e, item.id)}
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </li>

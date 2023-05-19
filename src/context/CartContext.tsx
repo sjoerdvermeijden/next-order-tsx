@@ -13,6 +13,7 @@ type Props = {
 interface CartItem {
   id: number;
   title: string;
+  count: number;
 }
 
 type ContextValue = [CartItem[], Dispatch<SetStateAction<CartItem[]>>];

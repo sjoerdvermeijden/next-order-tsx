@@ -91,7 +91,6 @@ function RestaurantPage() {
               <div className="restaurant">
                 <ul className="restaurant__menu">
                   {restaurantState.menu?.map((item) => {
-                    console.log(item);
                     return (
                       <li
                         className="restaurant__menu-item"
