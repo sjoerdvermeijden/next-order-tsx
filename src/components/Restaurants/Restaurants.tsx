@@ -12,6 +12,12 @@ export const StyledLink = styled.a`
   color: var(--darkgray);
 `;
 
+type Review = {
+  id: number;
+  description: string;
+  rating: number;
+};
+
 type Props = {
   name: string;
   description: string;
@@ -19,6 +25,7 @@ type Props = {
     img: string;
     alt: string;
   };
+  reviews: Array<Review>;
 };
 
 function Restaurants({}: Props) {
@@ -34,6 +41,7 @@ function Restaurants({}: Props) {
                     image={item.image}
                     name={item.name}
                     description={item.description}
+                    reviews={item.reviews}
                   />
                 </StyledLink>
               </li>
