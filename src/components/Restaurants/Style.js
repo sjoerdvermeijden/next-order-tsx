@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const RestaurantsWrapper = styled.div`
+  display: flex;
+  flex-grow: 1;
+
   .restaurants {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     list-style: none;
 
     &__item {

@@ -9,8 +9,10 @@ import Restaurants from "../components/Restaurants/Restaurants";
 import HomeFilter from "../components/HomeFilter/HomeFilter";
 
 export const LayoutWrapper = styled.div`
+  display: flex;
+  flex-grow: 1;
+
   @media (min-width: 768px) {
-    display: flex;
     align-items: flex-start;
   }
 `;

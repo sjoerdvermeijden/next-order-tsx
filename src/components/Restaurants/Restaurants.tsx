@@ -15,36 +15,34 @@ type Props = {};
 function Restaurants({}: Props) {
   const [stores, setStores] = useState(restaurants);
   return (
-    <div>
-      <RestaurantsWrapper>
-        <ul className="restaurants">
-          {restaurants.map((item) => {
-            return (
-              <>
-                <li className="restaurants__item">
-                  <StyledLink href={`/restaurants/${item.id}`}>
-                    <div className="restaurant">
-                      <figure className="restaurant__image">
-                        <img src={item.image.img} alt={item.image.alt} />
-                      </figure>
-                      <div className="restaurant__content">
-                        <h3 className="restaurant__title">{item.name}</h3>
-                        <p className="restaurant__description">
-                          {item.description}
-                        </p>
-                        <span className="restaurant__reviews">
-                          ({item.reviews.length} reviews)
-                        </span>
-                      </div>
+    <RestaurantsWrapper>
+      <ul className="restaurants">
+        {restaurants.map((item) => {
+          return (
+            <>
+              <li className="restaurants__item">
+                <StyledLink href={`/restaurants/${item.id}`}>
+                  <div className="restaurant">
+                    <figure className="restaurant__image">
+                      <img src={item.image.img} alt={item.image.alt} />
+                    </figure>
+                    <div className="restaurant__content">
+                      <h3 className="restaurant__title">{item.name}</h3>
+                      <p className="restaurant__description">
+                        {item.description}
+                      </p>
+                      <span className="restaurant__reviews">
+                        ({item.reviews.length} reviews)
+                      </span>
                     </div>
-                  </StyledLink>
-                </li>
-              </>
-            );
-          })}
-        </ul>
-      </RestaurantsWrapper>
-    </div>
+                  </div>
+                </StyledLink>
+              </li>
+            </>
+          );
+        })}
+      </ul>
+    </RestaurantsWrapper>
   );
 }
 
