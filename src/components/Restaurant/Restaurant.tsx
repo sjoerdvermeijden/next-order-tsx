@@ -38,11 +38,10 @@ function Restaurant({ name, description, image, reviews }: Props) {
                     <BsFillStarFill color="orange" />
                   </div>
                   <div className="rating__rating"></div>
-                  <div className="rating__label"></div>
+                  <div className="rating__label">
+                    ({reviews.length}) Reviews
+                  </div>
                 </div>
-              </div>
-              <div className="restaurant__total-reviews">
-                ({reviews.length}) Reviews
               </div>
             </div>
           </div>

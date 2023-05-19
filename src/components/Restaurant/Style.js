@@ -51,4 +51,16 @@ export const RestaurantWrapper = styled.div`
       font-size: 12px;
     }
   }
+
+  .rating {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      &:not(:last-child) {
+        margin-top: 2px;
+        margin-right: 5px;
+      }
+    }
+  }
 `;
