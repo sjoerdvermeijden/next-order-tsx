@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 
 import { restaurants } from "../../../data";
 import { RestaurantsWrapper } from "./Style";
+
+import Restaurant from "../Restaurant/Restaurant";
 
 export const StyledLink = styled.a`
   text-decoration: none;
@@ -13,7 +15,6 @@ export const StyledLink = styled.a`
 type Props = {};
 
 function Restaurants({}: Props) {
-  const [stores, setStores] = useState(restaurants);
   return (
     <RestaurantsWrapper>
       <ul className="restaurants">
@@ -22,20 +23,7 @@ function Restaurants({}: Props) {
             <>
               <li className="restaurants__item">
                 <StyledLink href={`/restaurants/${item.id}`}>
-                  <div className="restaurant">
-                    <figure className="restaurant__image">
-                      <img src={item.image.img} alt={item.image.alt} />
-                    </figure>
-                    <div className="restaurant__content">
-                      <h3 className="restaurant__title">{item.name}</h3>
-                      <p className="restaurant__description">
-                        {item.description}
-                      </p>
-                      <span className="restaurant__reviews">
-                        ({item.reviews.length} reviews)
-                      </span>
-                    </div>
-                  </div>
+                  <Restaurant />
                 </StyledLink>
               </li>
             </>
