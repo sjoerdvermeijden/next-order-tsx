@@ -12,7 +12,14 @@ export const StyledLink = styled.a`
   color: var(--darkgray);
 `;
 
-type Props = {};
+type Props = {
+  name: string;
+  description: string;
+  image: {
+    img: string;
+    alt: string;
+  };
+};
 
 function Restaurants({}: Props) {
   return (
@@ -23,7 +30,11 @@ function Restaurants({}: Props) {
             <>
               <li className="restaurants__item">
                 <StyledLink href={`/restaurants/${item.id}`}>
-                  <Restaurant />
+                  <Restaurant
+                    image={item.image}
+                    name={item.name}
+                    description={item.description}
+                  />
                 </StyledLink>
               </li>
             </>
