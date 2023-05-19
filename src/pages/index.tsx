@@ -1,9 +1,19 @@
 import Head from "next/head";
 
+import styled from "styled-components";
+
 import Layout from "../components/Layout/Layout";
 import Block from "../components/Block/Block";
 import Wrap from "../components/Wrap/Wrap";
 import Restaurants from "../components/Restaurants/Restaurants";
+import HomeFilter from "../components/HomeFilter/HomeFilter";
+
+export const LayoutWrapper = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: flex-start;
+  }
+`;
 
 export default function Home() {
   return (
@@ -17,7 +27,10 @@ export default function Home() {
       <Layout>
         <Block>
           <Wrap>
-            <Restaurants />
+            <LayoutWrapper>
+              <HomeFilter />
+              <Restaurants />
+            </LayoutWrapper>
           </Wrap>
         </Block>
       </Layout>
