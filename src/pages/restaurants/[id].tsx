@@ -91,12 +91,14 @@ function RestaurantPage() {
               <div className="restaurant">
                 <ul className="restaurant__menu">
                   {restaurantState.menu?.map((item) => {
+                    console.log(item);
                     return (
                       <li
                         className="restaurant__menu-item"
                         key={restaurantState.id}
                       >
                         <MenuItem
+                          id={item.id}
                           title={item.title}
                           image={item.image}
                           description={item.description}

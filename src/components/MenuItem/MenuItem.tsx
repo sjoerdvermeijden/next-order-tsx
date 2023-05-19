@@ -3,6 +3,7 @@ import React, { MouseEvent } from "react";
 import { MenuWrapper } from "./Style";
 
 type Props = {
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -12,13 +13,13 @@ type Props = {
   };
 };
 
-const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
+const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>, id: number) => {
   e.preventDefault();
 
-  console.log("test");
+  console.log(id);
 };
 
-function Menu({ title, description, price, image }: Props) {
+function Menu({ id, title, description, price, image }: Props) {
   return (
     <MenuWrapper>
       <div className="menu-item">
@@ -28,7 +29,7 @@ function Menu({ title, description, price, image }: Props) {
         <div className="menu-item__container">
           <button
             className="menu-item__add-button"
-            onClick={(e) => handleMouseEvent(e)}
+            onClick={(e) => handleMouseEvent(e, id)}
           >
             +
           </button>
