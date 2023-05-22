@@ -18,7 +18,11 @@ function Footer({}: Props) {
         <Wrap>
           <p>
             Github repo:{" "}
-            <StyledLink href="" target="_blank" rel="noreferrer">
+            <StyledLink
+              href="https://github.com/sjoerdvermeijden/next-order-tsx"
+              target="_blank"
+              rel="noreferrer"
+            >
               hier
             </StyledLink>{" "}
             | Sjoerd Vermeijden

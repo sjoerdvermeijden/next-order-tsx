@@ -19,6 +19,7 @@ type Review = {
 };
 
 type Props = {
+  id: number;
   name: string;
   description: string;
   image: {
@@ -26,6 +27,7 @@ type Props = {
     alt: string;
   };
   reviews: Array<Review>;
+  rating: number;
 };
 
 function Restaurants({}: Props) {
@@ -38,6 +40,7 @@ function Restaurants({}: Props) {
               <li className="restaurants__item">
                 <StyledLink href={`/restaurants/${item.id}`}>
                   <Restaurant
+                    id={item.id}
                     image={item.image}
                     name={item.name}
                     description={item.description}

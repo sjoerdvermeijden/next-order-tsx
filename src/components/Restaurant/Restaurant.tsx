@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { RestaurantWrapper } from "./Style";
 
 import { BsFillStarFill } from "react-icons/bs";
+
+import { restaurants } from "../../../data";
 
 type Review = {
   id: number;
@@ -11,6 +13,7 @@ type Review = {
 };
 
 type Props = {
+  id: number;
   name: string;
   description: string;
   image: {
@@ -18,9 +21,32 @@ type Props = {
     alt: string;
   };
   reviews: Array<Review>;
+  rating: number;
 };
 
-function Restaurant({ name, description, image, reviews }: Props) {
+function Restaurant({ id, name, description, image, reviews }: Props) {
+  const [ratingState, setRatingState] = useState<number>(0);
+
+  const ratingFunction = () => {
+    const newArray = reviews.map((item) => {
+      return item.rating;
+    });
+
+    const rating =
+      newArray.reduce((partialSum, a) => partialSum + a, 0) / reviews.length;
+    setRatingState(rating);
+
+    restaurants.forEach((restaurant) => {
+      if (restaurant.id === id) {
+        restaurant.rating = rating;
+      }
+    });
+  };
+
+  useEffect(() => {
+    ratingFunction();
+  }, []);
+
   return (
     <>
       <RestaurantWrapper>
